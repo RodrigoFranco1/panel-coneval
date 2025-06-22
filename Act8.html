@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Panel de Visualización CONEVAL</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {packages:['corechart']});
+      google.charts.setOnLoadCallback(drawCharts);
+
+      function drawCharts() {
+        drawChart1();
+        drawChart2();
+        drawChart3();
+        drawChart4();
+        drawChart5();
+      }
+
+      function drawChart1() {
+        var data = google.visualization.arrayToDataTable([
+          ['Año', 'Chiapas', 'Oaxaca', 'Veracruz'],
+          ['2008', 76.7, 61.8, 51.2],
+          ['2010', 78.4, 67.1, 57.6],
+          ['2012', 74.7, 61.9, 52.6],
+          ['2014', 76.2, 66.8, 58.0],
+          ['2016', 77.1, 70.4, 62.2],
+          ['2018', 76.4, 66.4, 61.8]
+        ]);
+
+        var options = {
+          title: 'Porcentaje de Población en Pobreza - Chiapas, Oaxaca, Veracruz',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart1'));
+        chart.draw(data, options);
+      }
+
+      function drawChart2() {
+        var data = google.visualization.arrayToDataTable([
+          ['Año', 'México (millones)', 'Puebla (millones)'],
+          ['2008', 12.4, 3.8],
+          ['2010', 14.2, 3.7],
+          ['2012', 11.9, 3.2],
+          ['2014', 14.2, 3.6],
+          ['2016', 11.6, 3.3],
+          ['2018', 10.9, 3.4]
+        ]);
+
+        var options = {
+          title: 'Número de Personas en Pobreza - México y Puebla',
+          hAxis: { title: 'Año' },
+          vAxis: { title: 'Millones de personas' },
+          bars: 'vertical'
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart2'));
+        chart.draw(data, options);
+      }
+
+      function drawChart3() {
+        var data = google.visualization.arrayToDataTable([
+          ['Año', 'Chiapas', 'Guerrero', 'Oaxaca'],
+          ['2008', 38.3, 32.4, 32.2],
+          ['2010', 32.2, 31.5, 32.3],
+          ['2012', 32.2, 28.7, 28.3],
+          ['2014', 31.8, 29.9, 28.3],
+          ['2016', 31.8, 29.0, 26.9],
+          ['2018', 31.3, 25.5, 23.3]
+        ]);
+
+        var options = {
+          title: 'Pobreza Extrema - Chiapas, Guerrero y Oaxaca',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart3'));
+        chart.draw(data, options);
+      }
+
+      function drawChart4() {
+        var data = google.visualization.arrayToDataTable([
+          ['Año', 'Rural', 'Urbano'],
+          ['2008', 61.2, 36.3],
+          ['2010', 61.6, 38.4],
+          ['2012', 61.1, 38.2],
+          ['2014', 61.0, 41.6],
+          ['2016', 55.3, 40.7],
+          ['2018', 55.3, 37.6]
+        ]);
+
+        var options = {
+          title: 'Distribución de Pobreza - Rural vs Urbano',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart4'));
+        chart.draw(data, options);
+      }
+
+      function drawChart5() {
+        var data = google.visualization.arrayToDataTable([
+          ['Año', 'Indígena', 'No Indígena'],
+          ['2008', 76.7, 41.4],
+          ['2010', 78.6, 41.3],
+          ['2012', 77.4, 41.3],
+          ['2014', 75.6, 41.4],
+          ['2016', 74.9, 40.6],
+          ['2018', 74.9, 39.0]
+        ]);
+
+        var options = {
+          title: 'Distribución de Pobreza - Indígena vs No Indígena',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart5'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart1" style="width: 900px; height: 500px"></div>
+    <div id="chart2" style="width: 900px; height: 500px"></div>
+    <div id="chart3" style="width: 900px; height: 500px"></div>
+    <div id="chart4" style="width: 900px; height: 500px"></div>
+    <div id="chart5" style="width: 900px; height: 500px"></div>
+  </body>
+</html>
